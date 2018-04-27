@@ -276,7 +276,7 @@ public class Zork extends Application{
 				command.equalsIgnoreCase(Compass.values()[8].toString()) ||
 				command.equalsIgnoreCase(Compass.values()[9].toString())){
 			Compass c = Compass.valueOf(command.toUpperCase());
-			if(gm.getCurrentRoom().getAdjacentRoom(c)!=null){
+			if(gm.getCurrentRoom().getAdjacentRoom(c)!=null && gm.getCurrentRoom().getAdjacentRoom(c).getAccessible()){
 				gm.goToRoom(c);
 				textArea.appendText(gm.getCurrentRoom().getDescription()+"\n");
 			}
