@@ -3,6 +3,8 @@ Zork in Java and Javafx
 
 This is currently a work in progress
 
+
+
 To-Do:
 
 -Creating ALL items
@@ -16,5 +18,7 @@ To-Do:
 -Implementing restrictions and conditions to room access
 
 -Process commands under game folder
+
+
 
 The rest is TBD
