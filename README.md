@@ -1,10 +1,11 @@
 # ZorkJava
-Zork in Java and Javafx\n
-This is currently a work in progress\n
-\n
-To-Do:\n
--Creating ALL items\n
--Creating NPCs\n
+Zork in Java and Javafx
+
+This is currently a work in progress
+
+To-Do:
+-Creating ALL items
+-Creating NPCs
 -Populating Rooms with corresponding items
 -Populating Rooms with corresponding npcs
 -Implementing restrictions and conditions to room access
