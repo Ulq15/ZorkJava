@@ -1,0 +1,5 @@
+package Buttons;
+
+public enum Compass{
+	NORTH,SOUTH,EAST,WEST,NORTHEAST,NORTHWEST,SOUTHEAST,SOUTHWEST,UP,DOWN;
+}
