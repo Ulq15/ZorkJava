@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Buttons.*;
 import Map.GameMap;
-import Map.Room;
 import NPCs.Player;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -280,8 +279,11 @@ public class Zork extends Application{
 				gm.goToRoom(c);
 				textArea.appendText(gm.getCurrentRoom().getDescription()+"\n");
 			}
+			else if(gm.getCurrentRoom().getAdjacentRoom(c)!=null && !gm.getCurrentRoom().getAdjacentRoom(c).getAccessible()) {
+				textArea.appendText("Can NOT go that way! The path is blocked.\n");
+			}
 			else {
-				textArea.appendText("Can NOT go that way! \n");
+				textArea.appendText("Can NOT go that way! There is nothing there.\n");
 			}
 		}
 		else if (command.equalsIgnoreCase("load")){

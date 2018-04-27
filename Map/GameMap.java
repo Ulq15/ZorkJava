@@ -1207,7 +1207,7 @@ public class GameMap{
 		//room.addItem(item);
 		
 		//ADDING ROOMS TO ARRAYLIST
-		//roomList.put(roomName.getName(), roomName);
+		//DONE
 		currentRoom = westOfHouse;
 		roomList.put(westOfHouse.getName(), westOfHouse);
 		roomList.put(northOfHouse.getName(), northOfHouse);
