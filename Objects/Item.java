@@ -91,4 +91,8 @@ public abstract class Item {
 		return this.type;
 	}
 	
+	public String toString() {
+		String str = this.getName()+" "+this.getType()+" "+this.getDescription()+"\n";
+		return str;
+	}
 }

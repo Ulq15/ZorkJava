@@ -3,6 +3,7 @@ package NPCs;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import Game.Zork;
 import Map.Room;
@@ -91,5 +92,14 @@ public class Player{
 	
 	public Map<String, Item> getItemsheld(){
 		return this.itemsHeld;
+	}
+	
+	public String listItemsHeld() {
+		Set<String> str =this.itemsHeld.keySet();
+		String list="These are the items held: \n";
+		for(String s:str) {
+			list=list+"-"+s+"\n";
+		}
+		return list;
 	}
 }

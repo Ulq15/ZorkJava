@@ -24,6 +24,12 @@ public class Container extends Item{
 		this.itemHeld.add(item);
 	}
 	
-	
+	public String listItemsHeld() {
+		String str="These are the items in "+this.getName()+": \n";
+		for(Item i: this.itemHeld) {
+			str=str+"-"+i.getName()+"\n";
+		}
+		return str;
+	}
 	
 }
