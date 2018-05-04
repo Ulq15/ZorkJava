@@ -6,6 +6,7 @@ public class Food extends Item{
 	public Food(String n, double hpRestore, Boolean takable) {
 		super(n, takable);
 		this.restoreValue=hpRestore;
+		this.setType("food");
 	}
 	
 	public double getRestoreValue() {

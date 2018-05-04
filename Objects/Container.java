@@ -8,6 +8,7 @@ public class Container extends Item{
 	public Container(String n) {
 		super(n);
 		this.itemHeld=new ArrayList<Item>();
+		this.setType("container");
 	}
 	
 	public Container(String n, Boolean takable) {

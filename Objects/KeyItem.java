@@ -11,18 +11,21 @@ public class KeyItem extends Item{
 	public KeyItem(String n) {
 		super(n);
 		this.breakable=false;
+		this.setType("key");
 	}
 	
 	public KeyItem(String n, Boolean takable) {
 		super(n, takable);
 		this.breakable=false;
 		this.isTreasure=false;
+		this.setType("key");
 	}
 	
 	public KeyItem(String n, Boolean takable, Boolean readable) {
 		super(n, takable, readable);
 		this.breakable=false;
 		this.isTreasure=false;
+		this.setType("key");
 	}
 	
 	public void setBreakable() {

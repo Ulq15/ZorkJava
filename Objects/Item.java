@@ -7,6 +7,7 @@ public abstract class Item {
 	private String description;
 	private String content;
 	private String locationDescription;
+	private String type;
 	
 	public Item(String n) {
 		this.name=n;
@@ -80,6 +81,14 @@ public abstract class Item {
 			bool=true;
 		}
 		return bool;
+	}
+	
+	public void setType(String type) {
+		this.type=type;
+	}
+	
+	public String getType() {
+		return this.type;
 	}
 	
 }
