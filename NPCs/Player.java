@@ -89,5 +89,7 @@ public class Player{
 		}
 	}
 	
-	
+	public Map<String, Item> getItemsheld(){
+		return this.itemsHeld;
+	}
 }
