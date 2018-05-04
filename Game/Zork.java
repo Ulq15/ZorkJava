@@ -34,7 +34,7 @@ import javafx.stage.Stage;
 public class Zork extends Application{
 	private Stage stage;
 	public static TextArea textArea;
-	private ArrayList<String> pastCommands=new ArrayList<String>();
+	public static ArrayList<String> pastCommands=new ArrayList<String>();
 	public static GameMap gm = new GameMap();
 	public static Player player = new Player("Player");
 	
@@ -75,15 +75,24 @@ public class Zork extends Application{
 		
 		TextField textField = new TextField();
 		textField.setPrefWidth(1);
-		textField.setText("Enter command");
+		textField.setText("Commands");
 		textField.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
 				if(event.getCode()==KeyCode.ENTER) {
 					String txt = textField.getText();
-					textArea.appendText(">"+txt+"\n");
-					pastCommands.add(">"+txt+"\n");
-					textField.setText("");
+					if(!txt.equalsIgnoreCase("restart")) {
+						textArea.appendText(">"+txt+"\n");
+						pastCommands.add(">"+txt+"\n");
+						textField.setText("");
+					}
+					else {
+						ProcessCommands p = new ProcessCommands();
+						p.restart("");
+						textField.setText("");
+					}
+					
+					
 				}
 			}
 		});
@@ -262,7 +271,7 @@ public class Zork extends Application{
 		return new Scene(root, 710, 210);
 	}
 	
-	public void executeCommand(String str) {
+	public static void executeCommand(String str) {
 		String command = str.substring(1).toUpperCase();
 		if(command.equalsIgnoreCase(Compass.values()[0].toString()) ||
 				command.equalsIgnoreCase(Compass.values()[1].toString()) ||
@@ -293,7 +302,10 @@ public class Zork extends Application{
 			textArea.appendText("Saving...\n");
 		}
 		else {
-			ProcessCommands.process(command);
+			ProcessCommands pc = new ProcessCommands();
+			command=command.toLowerCase();
+			pc.process(command);
+			//ProcessCommands process(command);
 			//textArea.appendText("I don't understand what you mean by \""+command+"\".\n");
 		}
 	}
