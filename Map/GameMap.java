@@ -1198,7 +1198,9 @@ public class GameMap{
 		chalice.setTreasure();
 		
 		Container thiefsSack = new Container("THIEFS SACK", false);
-		
+		thiefsSack.setLocDesc("Sadly for you, the robber collapsed on top of the bag. Trying to take it would wake him.\n" + 
+				"The bag will be taken over his dead body.\n");
+		thiefsSack.setDescription("The bag is underneath the thief, so one can't say what, if anything, is inside.\n");
 		
 		
 		
