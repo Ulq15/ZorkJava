@@ -559,7 +559,7 @@ public class GameMap{
 		Map<Compass, Room> mapDraftyRoom = new HashMap<Compass, Room>();
 
 		Room machineRoom = new Room("Machine Room");
-		machineRoom.setDescription("This is a large, cold room which seems to be air-conditioned whose sole exit is to the north. In one corner there is a machine (?) which is reminiscent of {is shaped somewhat like} a clothes dryer. On its face {‘panel’}\n " +
+		machineRoom.setDescription("This is a large, cold room which seems to be air-conditioned whose sole exit is to the north. In one corner there is a machine (?) which is reminiscent of {is shaped somewhat like} a clothes dryer. On its face {â€˜panelâ€™}\n " +
 				"is a switch which is labeled in a dialect of Swahili. Fortunately, I know this dialect and the label translates to \"START\". The switch does not appear to be manipulable by any human hand (unless the fingers are about 1/16 by 1/4 inch). \n" +
 				"On the front of the machine is a large lid, which is (closed)/(open).");
 		Map<Compass, Room> mapMachineRoom = new HashMap<Compass, Room>();
@@ -1202,6 +1202,217 @@ public class GameMap{
 				"The bag will be taken over his dead body.\n");
 		thiefsSack.setDescription("The bag is underneath the thief, so one can't say what, if anything, is inside.\n");
 		
+		Weapon stiletto = new Weapon("STILETTO", 50, true);
+				stiletto.setDescription("A vicious-looking stiletto that the thief almost killed you with.\n");
+				stiletto.setLocDesc("There is a vicious-looking stiletto here.\n");
+
+				KeyItem beautifulBrassBauble = new KeyItem("BEAUTIFUL BRASS BAUBLE", true, false);
+				beautifulBrassBauble.setDescription("This is beautiful bitch, and it ain't ever going to stop being beautiful, bitch\n");
+				beautifulBrassBauble.setLocDesc("The item is right here.\n");
+
+				KeyItem torch = new KeyItem("TORCH", true, false);
+				torch.setDescription("Sitting on the pedestal is a flaming torch, made of ivory.\n");
+				torch.setLocDesc("There is an ivory torch here.\n");
+
+				KeyItem burnedOutIvoryTorch = new KeyItem("BURNED OUT IVORY TORCH", true, false);
+				burnedOutIvoryTorch.setDescription("The torch has been put out.\n");
+
+				KeyItem freeBrochure = new KeyItem("FREE BROCHURE", true, true);
+				freeBrochure.setBreakable();
+				freeBrochure.setDescription("The free brochure contains: A Don Woods Stamp.");
+				freeBrochure.setLocDesc("The item is right here.");
+				freeBrochure.setReadContent("The mailing label on this glossy brochure from GUE Tech reads:\nIntrepid Adventurer\nc/o Local Dungeon Master\nWhite House, GUE"+ 
+						"From the Introduction:\n"+
+
+				"The brochure describes, for the edification of the prospective student, the"+
+				"stringent but wide-ranging curriculum of GUE Tech. Required courses are offered"+
+				"in Ambition, Distraction, Uglification and Derision.  The Humanities are not"+
+				"slighted in this institution, as the student may register for Reeling and"+
+				"Writhing, Mystery (Ancient and Modern), Seaography, and Drawling (which"+
+				"includes Stretching and Fainting in Coils).  Advanced students are expected to"+
+				"learn Laughing and Grief."+"\n William Barton Flathead, Founder\n"+ 
+				"(The brochure continues in this vein for a few hundred more pages.)\nAffixed loosely to the brochure is a small stamp.\n");
+
+				KeyItem redHotBrassBell = new KeyItem("BRASS BELL", false, false);
+				redHotBrassBell.setDescription("There is a red hot brass bell that it is too hot to touch.\n");
+				redHotBrassBell.setLocDesc("Lying in a corner of the room is a small brass bell.\n");
+
+				KeyItem goldCoffin = new KeyItem("GOLD COFFIN", true, false);
+				goldCoffin.setDescription("The solid-gold coffin used for the burial of Ramses II is here.\n");
+				goldCoffin.setLocDesc("The item is right here.\n");
+
+				KeyItem scepter = new KeyItem("SCEPTER", true, false);
+				scepter.setBreakable();
+				scepter.setDescription("This is an ornamented scepter.");
+				scepter.setLocDesc("An ornamented scepter, tapering to a sharp point, is here.\n");
+				scepter.setBrokenDescription("A sharp stick, which appears to have been broken at one end, is here.\n");
+
+				KeyItem pairOfCandles = new KeyItem("PAIR OF CANDLES", true, false);
+				pairOfCandles.setDescription("It is two candles if you didn't know what pair meant.");
+				pairOfCandles.setLocDesc("On the two ends of the altar are burning candles.");
+
+				KeyItem blackBook = new KeyItem("BLACK BOOK", true, true);
+				blackBook.setDescription("On the altar is a large black book, open to page 569.");
+				blackBook.setLocDesc("There is a large black book here.");
+				blackBook.setReadContent("COMMANDMENT #12592\nOh ye who go about saying unto each:\nHello sailor\nDost thou know the magnitude of thy sin before the gods?\nYea, verily, thou shalt be ground between two stones."+
+				"Shall the angry gods cast thy body into the whirlpool?\n"
+				+"Surely, thy eye shall be put out with a sharp stick!\n"
+				+"Even unto the ends of the earth shalt thou wander and\n"
+				+"unto the land of the dead shalt thou be sent at last.\n"
+				+"Surely thou shalt repent of thy cunning.\n");
+
+				KeyItem grail = new KeyItem("GRAIL", true, false);
+				grail.setDescription("A grail that looks to be expensive.");
+				grail.setLocDesc("There is an extremely valuable (perhaps original) grail here.");
+
+				KeyItem platinumBar = new KeyItem("PLATINUM BAR", true, false);
+				platinumBar.setDescription("It's a platinum bar.");
+				platinumBar.setLocDesc("On the ground is a large platinum bar.");
+
+				KeyItem tourGuidebook = new KeyItem("TOUR GUIDEBOOK", true, true);
+				tourGuidebook.setDescription("Some guidebooks entitled 'Flood Control Dam #3' are on the reception desk.");
+				tourGuidebook.setLocDesc("There are tour guidebooks here.");
+				tourGuidebook.setReadContent("Guide Book to Flood Control Dam #3\n"+
+						"Flood Control Dam #3 (FCD#3) was constructed in year 783 of the Great Underground Empire to harness the destructive power of the mighty Frigid River. This work was supported by a grant of 37 million zorkmids from the Central Bureaucracy and your omnipotent local tyrant Lord Dimwit Flathead the Excessive. This impressive structure is composed of 370,000 {3.7} cubic feet of concrete, is 256 feet tall at the center, and 193 feet wide at the top. The lake {reservoir} created behind the dam has a volume of 1.7 {37} billion cubic feet, an area of 12 million square feet, and a shore line of 36 thousand feet."
+						+ "The construction of FCD#3 took 112 days from ground breaking to the dedication. It required a work force of 384 slaves, 34 slave drivers, 12 engineers, 2 turtle doves, and a partridge in a pear tree. The work was managed by a command team composed of 2345 bureaucrats, 2347 secretaries (at least two of whom can type), 12,256 paper shufflers, 52,469 rubber stampers, 245,193 red tape processors, and nearly one million dead trees. "
+						+ "We will now point out some of the more interesting features of FCD#3 as we"
+						+ "conduct you on a guided tour of the facilities:"
+						+ "1) You start your tour here in the Dam Lobby. You will notice on your right that....");
+						  
+				KeyItem matchbook = new KeyItem("MATCHBOOK", true, true);
+				matchbook.setDescription("A matchbook that has the cover that says 'Visit Beautiful FCD#3.'");
+				matchbook.setLocDesc("There is a matchbook whose cover says 'Visit Beautiful FCD#3' here.");
+				matchbook.setReadContent("Close cover before striking BKD"+
+
+				       "\n YOU too can make BIG MONEY in the exciting field of "+
+				                   "\n   PAPER SHUFFLING! "+
+
+				"Mr. Anderson {TAA} of Muddle, Mass. says: 'Before I took this course I was a lowly"
+				+ "bit twiddler. Now with what I learned at GUE Tech I feel really important and"
+				+ "can obfuscate and confuse with the best.'"
+				+ "Dr. Blank {Mr. MARC} had this to say: 'Ten short days ago all I could look forward to was"
+				+ "a dead-end job as a doctor. Now I have a promising future and make really big Zorkmids.'"
+				+ "GUE Tech can't promise these fantastic results to everyone. But when you earn"
+				+ "Your MDL degree from GUE Tech, your future will be brighter.\nSend for our free brochure today.");
+
+				KeyItem wrench = new KeyItem("WRENCH", true, false);
+				wrench.setDescription("A wrench meant for smacking bitches and taking names.");
+				wrench.setLocDesc("The wrench is here.");
+
+				KeyItem tube = new KeyItem("TUBE", true, true);
+				tube.setDescription("There is a tube of toothpaste that looks like Crest Ultra Whitening Cleanse.");
+				tube.setLocDesc("There is an object which looks like a tube of toothpaste here.");
+				tube.setReadContent("---> Frobozz Magic Gunk Company <---All-Purpose Gunk");
+
+				KeyItem screwdriver = new KeyItem("SCREWDRIVER", true, false);
+				screwdriver.setDescription("It is an item that is used to screw things not people.");
+				screwdriver.setLocDesc("There is a screwdriver here.");
+
+				KeyItem gunk = new KeyItem("GUNK", true, false);
+				gunk.setDescription("There is some gunk that could kill you if played with wrong.");
+				gunk.setLocDesc("There is some gunk here.");
+
+				KeyItem magicBoat = new KeyItem("MAGIC BOAT", true, false);
+				magicBoat.setBreakable();
+				magicBoat.setDescription("A folded pile of plastic with a small valve.");
+				magicBoat.setLocDesc("There is a pile of plastic here.");
+				magicBoat.setBrokenDescription("There is a pile of plastic here with a large hole in it.");
+
+				KeyItem crystalSkull = new KeyItem("CRYSTAL SKULL", true, false);
+				crystalSkull.setDescription("Lying in one corner of the room is a beautifully carved crystal skull. It appears to be grinning at you rather nastily.");
+				crystalSkull.setLocDesc("There is a skull lying here.");
+
+				KeyItem potOfGold = new KeyItem("POT OF GOLD",true, false);
+				potOfGold.setDescription("At the end of the rainbow is a pot of gold.");
+				potOfGold.setLocDesc("There is a pot of gold at the end of the rainbow.");
+
+				KeyItem shovel = new KeyItem("SHOVEL", true, false);
+				shovel.setDescription("A large metal face with a long handle.");
+				shovel.setLocDesc("There is a large shovel here.");
+
+				KeyItem hunkOfBatGuano = new KeyItem("HUNK OF BAT GUANO", true, false);
+				hunkOfBatGuano.setDescription("There is bat dung right here.");
+				hunkOfBatGuano.setLocDesc("There is some bat dung here.");
+
+				KeyItem beautifulJeweledScarab = new KeyItem("BEAUTIFUL JEWELED SCARAB", true, false);
+				beautifulJeweledScarab.setDescription("There is a scarab that is jeweled and beautiful.");
+				beautifulJeweledScarab.setLocDesc("There is a beautiful jeweled scarab here.");
+
+				KeyItem crystalTrident = new KeyItem("CRYSTAL TRIDENT", true, false);
+				crystalTrident.setDescription("On the shore lies Poseidon's own crystal trident.");
+				crystalTrident.setLocDesc("Poseidonâ€™s own crystal trident is here.");
+
+				KeyItem handheldAirPump = new KeyItem("HANDHELD AIR PUMP", true, false);
+				handheldAirPump.setDescription("There is a air pump that is handheld.");
+				handheldAirPump.setLocDesc("There is a small pump here.");
+
+				KeyItem trunkOfJewels = new KeyItem("TRUNK OF JEWELS", true, false);
+				trunkOfJewels.setDescription("Lying half buried in the mud is an old trunk, bulging with jewels.");
+				trunkOfJewels.setLocDesc("There is an old trunk here, bulging with assorted jewels.");
+
+				KeyItem tanLabel = new KeyItem("TAN LABEL", false, true);
+				tanLabel.setDescription("It is a tan label connected to the boat.");
+				tanLabel.setLocDesc("There is a tan label on the boat.");
+				tanLabel.setReadContent("   !!!!  FROBOZZ MAGIC BOAT COMPANY  !!!!"+
+
+				"\nHello, Sailor!\nInstructions for use:\nTo get into boat, say 'Board'\nTo leave boat, say 'Disembark'\nTo get into a body of water, say 'Launch'.\nTo get to shore, say 'Land' or the direction in which you want to maneuver the boat."+
+				"\nWarranty:\n"+
+				"This boat is guaranteed against all defects in parts and workmanship for a period of 76 milliseconds from date of purchase or until first used, whichever comes first."+
+				"\nWarning:\nThis boat is made of thin plastic.\nGood Luck!");
+				   
+				KeyItem redBuoy = new KeyItem("RED BUOY", true, false);
+				redBuoy.setDescription("You notice something funny about the feel of the buoy.");
+				redBuoy.setLocDesc("There is a red buoy here (probably a warning).");
+
+				KeyItem largeEmerald = new KeyItem("LARGE EMERALD", true, false);
+				largeEmerald.setDescription("It is a large hard emerald.");
+				largeEmerald.setLocDesc("There is an emerald here.");
+
+				KeyItem jadeFigurine = new KeyItem("JADE FIGURINE", true, false);
+				jadeFigurine.setDescription("It is a priceless figurine made of jade.");
+				jadeFigurine.setLocDesc("There is an exquisite jade figurine here.");
+
+				KeyItem statue = new KeyItem("STATUE", true, false);
+				statue.setDescription("It is a statue, what did you expect?");
+				statue.setLocDesc("There is a beautiful statue here.");
+
+				KeyItem sapphireEncrustedBracelet = new KeyItem("SAPPHIRE ENCRUSTED BRACELET", true, false);
+				sapphireEncrustedBracelet.setDescription("There is a bracelet with sapphires encrusted on it.");
+				sapphireEncrustedBracelet.setLocDesc("The bracelet is here.");
+
+				KeyItem smallPileOfCoal = new KeyItem("SMALL PILE OF COAL", true, false);
+				smallPileOfCoal.setDescription("It is a pile of coal.");
+				smallPileOfCoal.setLocDesc("There is a wooden timber on the ground here.");
+
+				KeyItem brokenTimber = new KeyItem("BROKEN TIMBER", true, false);
+				brokenTimber.setDescription("It is a pile of wood.");
+				brokenTimber.setLocDesc("There is a wooden timber on the ground here.");
+
+				KeyItem ropeTiedToBrokenTimber = new KeyItem("ROPE TIED TO BROKEN TIMBER", true, false);
+				ropeTiedToBrokenTimber.setDescription("The coil of rope is tied to the wooden timber.");
+				ropeTiedToBrokenTimber.setLocDesc("A broken timber is lying on the ground here.");
+
+				KeyItem largeDiamond = new KeyItem("LARGE DIAMOND", true, false);
+				largeDiamond.setDescription("It is a diamond that is quite large.");
+				largeDiamond.setLocDesc("There is an enormous diamond (perfectly cut) here.");
+
+				KeyItem bunchOfCokeBottles = new KeyItem("BUNCH OF COKE BOTTLES", true, false);
+				bunchOfCokeBottles.setBreakable();
+				bunchOfCokeBottles.setDescription("There is a large pile of empty Coke bottles here, evidently produced by the implementers during their long struggle to win totally.");
+				bunchOfCokeBottles.setLocDesc("Many empty Coke bottles are here.  Alas, they can't hold water.");
+
+				KeyItem stackOfListings = new KeyItem("STACK OF LISTINGS", true, true);
+				stackOfListings.setDescription("Although the paper once contained useful information, almost nothing can be distinguished now.There is an enormous stack of line-printer paper here.  It is barely readable.");
+				stackOfListings.setLocDesc("There is a gigantic pile of line-printer output here.");
+				stackOfListings.setReadContent("<DEFINE FEEL-FREE (LOSER)\n<TELL 'FEEL FREE, CHOMPER!'>>\n...\nThe rest is, alas, unintelligible (as were the implementers).");
+
+				KeyItem ancientMap = new KeyItem("ANCIENT MAP", true, true);
+				ancientMap.setDescription("A map that looks ancient.");
+				ancientMap.setLocDesc("In the trophy case is an ancient parchment which appears to be a map.");
+				ancientMap.setReadContent("The map shows a forest with three clearings. The largest clearing contains a house. Three paths leave the large clearing. One of these paths, leading southwest, is marked 'To Stone Barrow'.");
+
+
+
 		
 		
 		//ADDING Items to Rooms and itemList
