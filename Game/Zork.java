@@ -91,8 +91,6 @@ public class Zork extends Application{
 						p.restart("");
 						textField.setText("");
 					}
-					
-					
 				}
 			}
 		});
@@ -133,6 +131,16 @@ public class Zork extends Application{
 		saveLoad.getChildren().add(saveB);
 		saveLoad.getChildren().add(loadB);
 		
+		MyButton helpB = new MyButton("Help");
+		helpB.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		    @Override 
+		    public void handle(MouseEvent event) {
+		    	HelpStage hs = new HelpStage();
+		    	hs.start(HelpStage.stage);
+		   	}
+		});
+		
+		saveLoad.getChildren().add(helpB);
 		right.getChildren().add(saveLoad);
 		
 		

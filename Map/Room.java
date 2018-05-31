@@ -57,21 +57,19 @@ public class Room{
 		itemList.put(item.getName(), item);
 	}
 	
-	public Item takeItem(String i) {
+	public void takeItem(String i) {
 		if(itemList.get(i) != null) {
 			Item item = itemList.get(i);
 			if(item.isTakable()) {
 				itemList.remove(i);
-				return item;
+				Zork.player.takeItem(item);
 			}
 			else {
 				Zork.textArea.appendText("Cannot take "+ item.getName()+"\n");
-				return null;
 			}
 		}
 		else {
 			Zork.textArea.appendText("No such thing here.\n");
-			return null;
 		}
 	}
 	

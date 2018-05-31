@@ -2,6 +2,7 @@ package Game;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import Map.GameMap;
 import Map.Room;
@@ -106,15 +107,7 @@ public class ProcessCommands {
 	public void climb(String args) {
 		Zork.executeCommand(">up");
 	}
-	/*
-	public void enter(String args) {
-		
-	}
 	
-	public void out(String args) {
-		
-	}
-	*/
 	public void hi(String args) {
 		Zork.textArea.appendText("Hello...\n");
 	}
@@ -128,13 +121,13 @@ public class ProcessCommands {
 	}
 	
 	public void get(String args) {
-		String[] str=args.split(" ");
-		if(str[0].equalsIgnoreCase("all")) {
-			
+		String[] str=args.split(" ",2);
+		if(str[1].equalsIgnoreCase("all")) {
+			Zork.player.takeAllItems(Zork.gm.getCurrentRoom());
 		}
-		else if(Zork.gm.getItemList().containsKey(str[0])) {
-			if(Zork.gm.getItemList().get(str[0]).isTakable()) {
-				Zork.player.takeItem(Zork.gm.getCurrentRoom().takeItem(str[0]));
+		else if(Zork.gm.getItemList().containsKey(str[1].toUpperCase())) {
+			if(Zork.gm.getItemList().get(str[1].toUpperCase()).isTakable()) {
+				Zork.gm.getCurrentRoom().takeItem(str[1]);
 			}
 			else {
 				Zork.textArea.appendText("Cannot take "+ Zork.gm.getCurrentRoom().getItemList().get(str[0])+"\n");
@@ -150,37 +143,34 @@ public class ProcessCommands {
 	}
 	
 	public void open(String args) {
-		String[] str = args.split(" ");
-		if(Zork.gm.getCurrentRoom().getItemList().containsKey(str[0])) {
-			Item i = Zork.gm.getCurrentRoom().getItemList().get(str[0]);
+		String[] str =args.split(" ", 2);
+		if(Zork.gm.getCurrentRoom().getItemList().containsKey(str[1].toUpperCase())) {
+			Item i = Zork.gm.getCurrentRoom().getItemList().get(str[1].toUpperCase());
 			if(i.getType().equalsIgnoreCase("container")) {
 				Container c=(Container) i;
-				ArrayList<Item> al = c.getItems();
-				for(int j=0; j<al.size();j++) {
-					Zork.textArea.appendText(al.get(j)+"\n");
-				}
-				
+				c.listItemsHeld();
 			}
 			else {
 				Zork.textArea.appendText("Can't open that\n");
 			}
 		}
-		else if(Zork.player.getItemsheld().containsKey(str[0])) {
-			Item i = Zork.player.getItemsheld().get(str[0]);
+		else if(Zork.player.getItemsheld().containsKey(str[1].toUpperCase())) {
+			Item i = Zork.player.getItemsheld().get(str[1].toUpperCase());
 			if(i.getType().equalsIgnoreCase("container")) {
 				Container c=(Container) i;
-				ArrayList<Item> al = c.getItems();
-				for(int j=0; j<al.size();j++) {
-					Zork.textArea.appendText(al.get(j)+"\n");
-				}
+				c.listItemsHeld();
 			}
 			else {
 				Zork.textArea.appendText("Can't open that\n");
 			}
 		}
 		else {
-			Zork.textArea.appendText(str[0]+" is not something that can be openned\n");
+			Zork.textArea.appendText(str[1]+" is not something that can be openned\n");
 		}
+	}
+	
+	public void inventory(String args) {
+		Zork.player.getInventory();
 	}
 		
 	

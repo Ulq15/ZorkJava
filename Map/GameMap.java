@@ -559,7 +559,7 @@ public class GameMap{
 		Map<Compass, Room> mapDraftyRoom = new HashMap<Compass, Room>();
 
 		Room machineRoom = new Room("Machine Room");
-		machineRoom.setDescription("This is a large, cold room which seems to be air-conditioned whose sole exit is to the north. In one corner there is a machine (?) which is reminiscent of {is shaped somewhat like} a clothes dryer. On its face {â€˜panelâ€™}\n " +
+		machineRoom.setDescription("This is a large, cold room which seems to be air-conditioned whose sole exit is to the north. In one corner there is a machine (?) which is reminiscent of {is shaped somewhat like} a clothes dryer. On its face {‘panel’}\n " +
 				"is a switch which is labeled in a dialect of Swahili. Fortunately, I know this dialect and the label translates to \"START\". The switch does not appear to be manipulable by any human hand (unless the fingers are about 1/16 by 1/4 inch). \n" +
 				"On the front of the machine is a large lid, which is (closed)/(open).");
 		Map<Compass, Room> mapMachineRoom = new HashMap<Compass, Room>();
@@ -1085,6 +1085,10 @@ public class GameMap{
 		mapDeadEnd4.put(Compass.SOUTH, maze12);
 		deadEnd4.setAdjacentRooms(mapDeadEnd4);
 		
+		//***************************************
+		//										*
+		//										*
+		//										*
 		//ADD GAME ITEMS & NPCS & ROOM ACCESS CONDITIONS ETC HERE
 		//Create Items and put contained items in containers
 		Container smallMailbox = new Container("SMALL MAILBOX", false);
@@ -1202,28 +1206,24 @@ public class GameMap{
 				"The bag will be taken over his dead body.\n");
 		thiefsSack.setDescription("The bag is underneath the thief, so one can't say what, if anything, is inside.\n");
 		
-		Weapon stiletto = new Weapon("STILETTO", 50, true);
+				Weapon stiletto = new Weapon("STILETTO", 30, true);
 				stiletto.setDescription("A vicious-looking stiletto that the thief almost killed you with.\n");
 				stiletto.setLocDesc("There is a vicious-looking stiletto here.\n");
 
 				KeyItem beautifulBrassBauble = new KeyItem("BEAUTIFUL BRASS BAUBLE", true, false);
 				beautifulBrassBauble.setDescription("This is beautiful bitch, and it ain't ever going to stop being beautiful, bitch\n");
-				beautifulBrassBauble.setLocDesc("The item is right here.\n");
+				beautifulBrassBauble.setLocDesc("The Brass Bauble is here.\n");
 
 				KeyItem torch = new KeyItem("TORCH", true, false);
-				torch.setDescription("Sitting on the pedestal is a flaming torch, made of ivory.\n");
-				torch.setLocDesc("There is an ivory torch here.\n");
-
-				KeyItem burnedOutIvoryTorch = new KeyItem("BURNED OUT IVORY TORCH", true, false);
-				burnedOutIvoryTorch.setDescription("The torch has been put out.\n");
+				torch.setDescription("This torch is burning bright.\n");
+				torch.setLocDesc("Sitting on the pedestal is a flaming torch, made of ivory.\n");
+				torch.setBreakable();
+				torch.setBrokenDescription("The torch has been put out.\n");
 
 				KeyItem freeBrochure = new KeyItem("FREE BROCHURE", true, true);
-				freeBrochure.setBreakable();
 				freeBrochure.setDescription("The free brochure contains: A Don Woods Stamp.");
-				freeBrochure.setLocDesc("The item is right here.");
 				freeBrochure.setReadContent("The mailing label on this glossy brochure from GUE Tech reads:\nIntrepid Adventurer\nc/o Local Dungeon Master\nWhite House, GUE"+ 
 						"From the Introduction:\n"+
-
 				"The brochure describes, for the edification of the prospective student, the"+
 				"stringent but wide-ranging curriculum of GUE Tech. Required courses are offered"+
 				"in Ambition, Distraction, Uglification and Derision.  The Humanities are not"+
@@ -1233,27 +1233,25 @@ public class GameMap{
 				"learn Laughing and Grief."+"\n William Barton Flathead, Founder\n"+ 
 				"(The brochure continues in this vein for a few hundred more pages.)\nAffixed loosely to the brochure is a small stamp.\n");
 
-				KeyItem redHotBrassBell = new KeyItem("BRASS BELL", false, false);
-				redHotBrassBell.setDescription("There is a red hot brass bell that it is too hot to touch.\n");
-				redHotBrassBell.setLocDesc("Lying in a corner of the room is a small brass bell.\n");
+				KeyItem bell = new KeyItem("BRASS BELL", false, false);
+				bell.setDescription("There is a red hot brass bell that it is too hot to touch.\n");
+				bell.setLocDesc("Lying in a corner of the room is a small brass bell.\n");
 
-				KeyItem goldCoffin = new KeyItem("GOLD COFFIN", true, false);
+				Container goldCoffin = new Container("GOLD COFFIN", true);
 				goldCoffin.setDescription("The solid-gold coffin used for the burial of Ramses II is here.\n");
-				goldCoffin.setLocDesc("The item is right here.\n");
+				goldCoffin.setLocDesc("A Golden Coffin is here.\n");
 
 				KeyItem scepter = new KeyItem("SCEPTER", true, false);
-				scepter.setBreakable();
 				scepter.setDescription("This is an ornamented scepter.");
 				scepter.setLocDesc("An ornamented scepter, tapering to a sharp point, is here.\n");
-				scepter.setBrokenDescription("A sharp stick, which appears to have been broken at one end, is here.\n");
 
 				KeyItem pairOfCandles = new KeyItem("PAIR OF CANDLES", true, false);
 				pairOfCandles.setDescription("It is two candles if you didn't know what pair meant.");
 				pairOfCandles.setLocDesc("On the two ends of the altar are burning candles.");
 
 				KeyItem blackBook = new KeyItem("BLACK BOOK", true, true);
-				blackBook.setDescription("On the altar is a large black book, open to page 569.");
-				blackBook.setLocDesc("There is a large black book here.");
+				blackBook.setDescription("This is an eary black book.");
+				blackBook.setLocDesc("On the altar is a large black book, open to page 569.");
 				blackBook.setReadContent("COMMANDMENT #12592\nOh ye who go about saying unto each:\nHello sailor\nDost thou know the magnitude of thy sin before the gods?\nYea, verily, thou shalt be ground between two stones."+
 				"Shall the angry gods cast thy body into the whirlpool?\n"
 				+"Surely, thy eye shall be put out with a sharp stick!\n"
@@ -1305,7 +1303,7 @@ public class GameMap{
 				tube.setReadContent("---> Frobozz Magic Gunk Company <---All-Purpose Gunk");
 
 				KeyItem screwdriver = new KeyItem("SCREWDRIVER", true, false);
-				screwdriver.setDescription("It is an item that is used to screw things not people.");
+				screwdriver.setDescription("It is an item that is used to screw things.");
 				screwdriver.setLocDesc("There is a screwdriver here.");
 
 				KeyItem gunk = new KeyItem("GUNK", true, false);
@@ -1340,7 +1338,7 @@ public class GameMap{
 
 				KeyItem crystalTrident = new KeyItem("CRYSTAL TRIDENT", true, false);
 				crystalTrident.setDescription("On the shore lies Poseidon's own crystal trident.");
-				crystalTrident.setLocDesc("Poseidonâ€™s own crystal trident is here.");
+				crystalTrident.setLocDesc("Poseidon’s own crystal trident is here.");
 
 				KeyItem handheldAirPump = new KeyItem("HANDHELD AIR PUMP", true, false);
 				handheldAirPump.setDescription("There is a air pump that is handheld.");
@@ -1412,12 +1410,76 @@ public class GameMap{
 				ancientMap.setReadContent("The map shows a forest with three clearings. The largest clearing contains a house. Three paths leave the large clearing. One of these paths, leading southwest, is marked 'To Stone Barrow'.");
 
 
-
 		
 		
 		//ADDING Items to Rooms and itemList
 		//itemList.put(itemName, item);
 		//room.addItem(item);
+		itemList.put(smallMailbox.getName(), smallMailbox);
+		itemList.put(smallBirdsNest.getName(), smallBirdsNest);
+		itemList.put(clockworkCanary.getName(), clockworkCanary);
+		itemList.put(pileOfLeaves.getName(), pileOfLeaves);
+		itemList.put(brownSack.getName(), brownSack);
+		itemList.put(glassBottle.getName(), glassBottle);
+		itemList.put(brassLantern.getName(), brassLantern);
+		itemList.put(sword.getName(), sword);
+		itemList.put(rope.getName(), rope);
+		itemList.put(nastyKnife.getName(), nastyKnife);
+		itemList.put(painting.getName(), painting);
+		itemList.put(zorkOwnerManual.getName(), zorkOwnerManual);
+		itemList.put(bloodyAxe.getName(), bloodyAxe);
+		itemList.put(burnedOutLantern.getName(), burnedOutLantern);
+		itemList.put(skeletonKey.getName(), skeletonKey);
+		itemList.put(leatherBagOfCoins.getName(), leatherBagOfCoins);
+		itemList.put(rustyKnife.getName(), rustyKnife);
+		itemList.put(chalice.getName(), chalice);
+		itemList.put(thiefsSack.getName(), thiefsSack);
+		itemList.put(smallMailbox.getName(), stiletto);
+		itemList.put(beautifulBrassBauble.getName(), beautifulBrassBauble);
+		itemList.put(torch.getName(), torch);
+		itemList.put(freeBrochure.getName(), freeBrochure);
+		itemList.put(bell.getName(), bell);
+		itemList.put(goldCoffin.getName(), goldCoffin);
+		itemList.put(scepter.getName(), scepter);
+		itemList.put(pairOfCandles.getName(), pairOfCandles);
+		itemList.put(blackBook.getName(), blackBook);
+		itemList.put(grail.getName(), grail);
+		itemList.put(platinumBar.getName(), platinumBar);
+		itemList.put(tourGuidebook.getName(), tourGuidebook);
+		itemList.put(matchbook.getName(), matchbook);
+		itemList.put(wrench.getName(), wrench);
+		itemList.put(tube.getName(), tube);
+		itemList.put(screwdriver.getName(), screwdriver);
+		itemList.put(gunk.getName(), gunk);
+		itemList.put(magicBoat.getName(), magicBoat);
+		itemList.put(crystalSkull.getName(), crystalSkull);
+		itemList.put(potOfGold.getName(), potOfGold);
+		itemList.put(shovel.getName(), shovel);
+		itemList.put(hunkOfBatGuano.getName(), hunkOfBatGuano);
+		itemList.put(beautifulJeweledScarab.getName(), beautifulJeweledScarab);
+		itemList.put(crystalTrident.getName(), crystalTrident);
+		itemList.put(handheldAirPump.getName(), handheldAirPump);
+		itemList.put(trunkOfJewels.getName(), trunkOfJewels);
+		itemList.put(tanLabel.getName(), tanLabel);
+		itemList.put(redBuoy.getName(), redBuoy);
+		itemList.put(largeEmerald.getName(), largeEmerald);
+		itemList.put(jadeFigurine.getName(), jadeFigurine);
+		itemList.put(statue.getName(), statue);
+		itemList.put(sapphireEncrustedBracelet.getName(), sapphireEncrustedBracelet);
+		itemList.put(smallPileOfCoal.getName(), smallPileOfCoal);
+		itemList.put(brokenTimber.getName(), brokenTimber);
+		itemList.put(ropeTiedToBrokenTimber.getName(), ropeTiedToBrokenTimber);
+		itemList.put(largeDiamond.getName(), largeDiamond);
+		itemList.put(bunchOfCokeBottles.getName(), bunchOfCokeBottles);
+		itemList.put(stackOfListings.getName(), stackOfListings);
+		itemList.put(ancientMap.getName(), ancientMap);
+		
+		westOfHouse.addItem(smallMailbox);
+		upATree.addItem(smallBirdsNest);
+		clearing1.addItem(pileOfLeaves);
+		endOfRainbow.addItem(potOfGold);
+		
+		
 		
 		//ADDING ROOMS TO ARRAYLIST
 		//DONE
